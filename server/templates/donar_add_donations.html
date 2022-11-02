@@ -1,0 +1,267 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Title -->
+    <title>WeHelp</title>
+    <!-- Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/bootstrap.css')}}" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/animate.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/font-awesome.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/nexus.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/responsive.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/custom.css')}}" rel="stylesheet">
+    <!-- Google Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f0d6d6;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="body-bg">
+        <!-- Phone/Email -->
+        <div id="pre-header" class="background-gray-lighter">
+            <div class="container no-padding">
+                <!-- <div class="row hidden-xs">
+                        <div class="col-sm-6 padding-vert-5">
+                            <strong>Phone:</strong>&nbsp;1-800-123-4567
+                        </div>
+                        <div class="col-sm-6 text-right padding-vert-5">
+                            <strong>Email:</strong>&nbsp;info@joomla51.com
+                        </div>
+                    </div> -->
+            </div>
+        </div>
+        <!-- End Phone/Email -->
+        <!-- Header -->
+        <div id="header">
+            <div class="container">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a title="">
+                            <img src="{{url_for('static',filename='assets/img/logo.png')}}" class="logo_img" alt="Logo" />
+                        </a>
+                    </div>
+                    <!-- End Logo -->
+                </div>
+            </div>
+        </div>
+        <!-- End Header -->
+        <!-- Top Menu -->
+        <div id="hornav" class="bottom-border-shadow">
+            <div class="container no-padding border-bottom">
+                <div class="row">
+                    <div class="col-md-8 no-padding">
+                        <div class="visible-lg">
+                            <ul id="hornavmenu" class="nav navbar-nav">
+                                <li>
+                                    <a href="/donar_home" class="fa-home ">Home</a>
+                                </li>
+                                <li>
+                                    <span class="fa-gears active"><a href="/product_registration">Donate</a></span>
+
+                                </li>
+                                <li>
+                                    <span class="fa-gears "><a href="/donar_view_notification">Notification</a></span>
+
+                                </li>
+                                <!-- <li>
+                                    <span class="fa-gears "><a href="/order">Requsts</a></span>
+
+                                </li> -->
+                                <li>
+                                    <span class="fa-gears "><a href="/logout">Logout</a></span>
+
+                                </li>
+                                </ul>
+
+
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- End Top Menu -->
+        <!-- === END HEADER === -->
+        <!-- === BEGIN CONTENT === -->
+        <div id="content">
+            <div class="container background-white">
+                <div class="row margin-vert-30">
+                    <!-- Main Column -->
+                    <div class="col-md-9">
+                        <!-- Main Content -->
+                        <div class="headline">
+
+                        </div>
+
+                        <div class="alert alert-primary" role="alert">
+                            {{heading}}! &nbsp; {{message}}
+                          </div>
+
+                        <!-- Contact Form -->
+                        <form action="product_registration" method="POST" enctype="multipart/form-data">
+                            <label>Donation Name</label>
+                            <div class="row margin-bottom-20">
+                                <div class="col-md-6 col-md-offset-0">
+                                    <input class="form-control" type="text" name="pname" required/>
+                                </div>
+                            </div>
+                            <!-- <label>
+                                <span class="color-red">*</span>
+                            </label> -->
+                            <div class="row margin-bottom-20">
+                                <div class="col-md-6 col-md-offset-0">
+                                    <input class="form-control" type="file" name="file" required>
+                                </div>
+                            </div>
+                            <label>Description</label>
+                            <div class="row margin-bottom-20">
+                                <div class="col-md-8 col-md-offset-0">
+                                    <textarea rows="8" class="form-control" name="desc" required/></textarea>
+                                </div>
+                            </div>
+                            <p>
+                                <button type="submit" class="btn btn-primary">Add Donations</button>
+                            </p>
+                        </form>
+                        <!-- End Contact Form -->
+                        <!-- End Main Content -->
+                    </div>
+                    <!-- End Main Column -->
+                    <!-- Side Column -->
+                    <!-- <div class="col-md-3"> -->
+                        <!-- Recent Posts -->
+                        <!-- <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Contact Info</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, no cetero voluptatum est, audire sensibus maiestatis vis et. Vitae audire prodesset an his. Nulla ubique omnesque in sit.</p>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <i class="fa-phone color-primary"></i>+353-44-55-66</li>
+                                    <li>
+                                        <i class="fa-envelope color-primary"></i>info@example.com</li>
+                                    <li>
+                                        <i class="fa-home color-primary"></i>http://www.example.com</li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <strong class="color-primary">Monday-Friday:</strong>9am to 6pm</li>
+                                    <li>
+                                        <strong class="color-primary">Saturday:</strong>10am to 3pm</li>
+                                    <li>
+                                        <strong class="color-primary">Sunday:</strong>Closed</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- End recent Posts -->
+                        <!-- About -->
+                        <!-- <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">About</h3>
+                            </div>
+                            <div class="panel-body">
+                                Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.
+                            </div>
+                        </div> -->
+                        <!-- End About -->
+                    <!-- </div> -->
+                    <!-- End Side Column -->
+                <!-- </div>
+            </div>
+        </div> -->
+        <!-- === END CONTENT === -->
+        <!-- === BEGIN FOOTER === -->
+
+        <!-- <div id="header">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div> -->
+        <!-- Footer -->
+        <!-- <div id="footer" class="background-grey">
+            <div class="container">
+                <div class="row"> -->
+                    <!-- Footer Menu -->
+                    <!-- <div id="footermenu" class="col-md-8">
+                        <ul class="list-unstyled list-inline">
+                            <li>
+                                <a href="#" target="_blank">Sample Link</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">Sample Link</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">Sample Link</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">Sample Link</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <!-- End Footer Menu -->
+                    <!-- Copyright -->
+                    <!-- <div id="copyright" class="col-md-4">
+                        <p class="pull-right">(c) 2014 Your Copyright Info</p>
+                    </div> -->
+                    <!-- End Copyright -->
+                <!-- </div>
+            </div>
+        </div> -->
+        <!-- End Footer -->
+        <!-- JS -->
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.min.js')}}" type="text/javascript"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/scripts.js')}}"></script>
+        <!-- Isotope - Portfolio Sorting -->
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.isotope.js')}}" type="text/javascript"></script>
+        <!-- Mobile Menu - Slicknav -->
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.slicknav.js')}}" type="text/javascript"></script>
+        <!-- Animate on Scroll-->
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.visible.js')}}" charset="utf-8"></script>
+        <!-- Sticky Div -->
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.sticky.js')}}" charset="utf-8"></script>
+        <!-- Slimbox2-->
+        <script type="text/javascript" src="{{url_for('static',filename='assets/js/slimbox2.js')}}" charset="utf-8"></script>
+        <!-- Modernizr -->
+        <script src="{{url_for('static',filename='assets/js/modernizr.custom.js')}}" type="text/javascript"></script>
+        <!-- End JS -->
+</body>
+
+</html>
+<!-- === END FOOTER === -->

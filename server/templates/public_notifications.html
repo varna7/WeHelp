@@ -1,0 +1,182 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- Title -->
+    <title>WeHelp</title>
+    <!-- Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/bootstrap.css')}}" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/animate.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/font-awesome.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/nexus.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/responsive.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/custom.css')}}" rel="stylesheet">
+    <!-- Google Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="body-bg">
+        <!-- Phone/Email -->
+
+        <!-- End Phone/Email -->
+        <!-- Header -->
+        <div id="header">
+            <div class="container">
+                <div class="row">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a title="">
+                            <img src="{{url_for('static',filename='assets/img/logo.png')}}" class="logo_img" alt="Logo" />
+                        </a>
+                    </div>
+                    <!-- End Logo -->
+                </div>
+            </div>
+        </div>
+        <!-- End Header -->
+        <!-- Top Menu -->
+        <div id="hornav" class="bottom-border-shadow">
+            <div class="container no-padding border-bottom">
+                <div class="row">
+                    <div class="col-md-8 no-padding">
+                        <div class="visible-lg">
+                            <ul id="hornavmenu" class="nav navbar-nav">
+                                <li>
+                                    <a href="/" class="fa-home active">Home</a>
+                                </li>
+                                <li>
+                                    <span class=""><a href=login>LOGIN</a></span>
+
+                                </li>
+                                <li>
+                                    <span class="">Register</span>
+                                    <ul>
+                                        <li class="parent">
+                                            <span>Register</span>
+                                            <ul>
+                                                <li>
+                                                    <a href="user_registration">User</a>
+                                                </li>
+                                                <li>
+                                                    <a href="donar_registration">Donar</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/volunteerreg">volunteer</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class=""><a href="/publicnotification">Notification</a></span>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Top Menu -->
+        <!-- === END HEADER === -->
+        <!-- === BEGIN CONTENT === -->
+        <div class="container background-white">
+            <div class="row margin-vert-30">
+                <!-- Register Box -->
+                <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <form class="signup-page" action="admin_view_donations" method="POST">
+
+                        <table class="table table-stripped">
+                            <tr style="font-size: 30px;">
+                                <th>Notification</th>
+                                <th>Date</th>
+
+                            </tr>
+                            <tbody>
+                                {% for row in result%}
+                                <tr style="font-size: 25px;">
+                                    <td>{{row[1]}}</td>
+
+                                    <td>{{row[2]}}</td>
+
+
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <!-- End Register Box -->
+            </div>
+        </div>
+    </div>
+    <!-- === BEGIN FOOTER === -->
+
+
+    <!-- Footer -->
+    <div id="footer" class="background-grey">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Menu -->
+                <div id="footermenu" class="col-md-8">
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <a href="#" target="_blank">Sample Link</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Sample Link</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Sample Link</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Sample Link</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Footer Menu -->
+                <!-- Copyright -->
+                <div id="copyright" class="col-md-4">
+                    <p class="pull-right">(c) 2014 Your Copyright Info</p>
+                </div>
+                <!-- End Copyright -->
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+    <!-- JS -->
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.min.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/scripts.js')}}"></script>
+    <!-- Isotope - Portfolio Sorting -->
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.isotope.js')}}" type="text/javascript"></script>
+    <!-- Mobile Menu - Slicknav -->
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.slicknav.js')}}" type="text/javascript"></script>
+    <!-- Animate on Scroll-->
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.visible.js')}}" charset="utf-8"></script>
+    <!-- Sticky Div -->
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.sticky.js')}}" charset="utf-8"></script>
+    <!-- Slimbox2-->
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/slimbox2.js')}}" charset="utf-8"></script>
+    <!-- Modernizr -->
+    <script src="{{url_for('static',filename='assets/js/modernizr.custom.js')}}" type="text/javascript"></script>
+    <!-- End JS -->
+</body>
+
+</html>
+<!-- === END FOOTER === -->
